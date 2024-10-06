@@ -11,7 +11,13 @@ const app = express();
 const PORT = 6969;
 
 dotenv.config();// When you call dotenv.config(), it reads the .env file and makes those variables accessible via process.env, allowing you to use them throughout your project.
-app.use(cors()); //app.use(cors()) is a middleware function in Node.js/Express used to enable CORS (Cross-Origin Resource Sharing). CORS allows your server to accept requests from different origins (domains, protocols, or ports), which is necessary when your front-end (e.g., React app) is hosted on a different domain or port than your back-end API.
+app.use(cors(
+    {
+        origin:["https://notefrontend-kohl.vercel.app/"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+)); //app.use(cors()) is a middleware function in Node.js/Express used to enable CORS (Cross-Origin Resource Sharing). CORS allows your server to accept requests from different origins (domains, protocols, or ports), which is necessary when your front-end (e.g., React app) is hosted on a different domain or port than your back-end API.
 app.use(bodyParser.json()); //app.use(bodyParser.json()) is middleware in Express that parses incoming requests with JSON payloads. It is commonly used when you expect the client to send JSON data in the body of an HTTP request (e.g., in a POST request).
 app.use(express.json()); // built in middleware or request handler, no need to install this lib.
 
