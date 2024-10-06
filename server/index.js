@@ -13,7 +13,7 @@ const PORT = 6969;
 dotenv.config();// When you call dotenv.config(), it reads the .env file and makes those variables accessible via process.env, allowing you to use them throughout your project.
 app.use(cors(
     {
-        origin:["https://notefrontend-kohl.vercel.app"],
+        origin:["https://notefrontend-kohl.vercel.app/"],
         methods:["POST","GET"],
         credentials:true
     }
