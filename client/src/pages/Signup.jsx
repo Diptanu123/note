@@ -28,7 +28,7 @@ const Signup = () => {
       formData.append("profileImage", profileImage);
 
       const result = await axios.post(
-        "/auth/signup",
+        "https://noteapp-kappa.vercel.app/auth/signup",
         formData,
         {
           headers: {
