@@ -34,7 +34,8 @@ const Signup = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        },
+          withCredentials: true,
+        }
       );
       console.log("Data: ", result);
       alert("User Entry Saved in Database");
