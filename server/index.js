@@ -21,6 +21,14 @@ app.use(cors(
 app.use(bodyParser.json()); //app.use(bodyParser.json()) is middleware in Express that parses incoming requests with JSON payloads. It is commonly used when you expect the client to send JSON data in the body of an HTTP request (e.g., in a POST request).
 app.use(express.json()); // built in middleware or request handler, no need to install this lib.
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://notefrontend-kohl.vercel.app');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+  });
+  
 
 try {
     mongoose.connect(process.env.MONGO_URL);
