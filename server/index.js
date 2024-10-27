@@ -41,8 +41,8 @@ app.get("/", (req, res) => {
     res.send("Server Is Running");
 });
 
-app.use("/auth", authRoutes); 
-app.use("/notes", noteRoutes);
+app.use("/auth",cors(corsOptions), authRoutes); 
+app.use("/notes",cors(corsOptions), noteRoutes);
 app.use("/files", express.static("files"));
 
 // Start the server
