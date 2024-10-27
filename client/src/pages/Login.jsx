@@ -17,13 +17,11 @@ const Login = () => {
   const loginUser = async (e) => {
     try {
       e.preventDefault();
-
       const user = {
         userEmail,
         userPassword,
       };
-
-      const result = await axios.post("https://noteapp-kappa.vercel.app/auth/login", user);
+      const result = await axios.post("https://noteapp-kappa.vercel.app/auth/login", user, { withCredentials: true } );
       if(result.data.status==="Error")
       {
         toast.error("wrong credentials ");
@@ -34,9 +32,6 @@ const Login = () => {
       dispatch(setUserData(result.data));
       navigate("/");
       }
-
-
-
     } catch (error) {
       console.log("Cannot Login the User: ", error);
     }
