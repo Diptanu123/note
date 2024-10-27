@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   const user = useSelector((state) => state.user.userData);
 
-  const username = user.userName;
+  // const username = user.userName;
 
   const handleSearch = async (e) => {
     e.preventDefault();
