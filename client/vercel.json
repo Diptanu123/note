@@ -1,6 +1,9 @@
-{
+
+  
+  {
     "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
+      { "source": "/auth/(.*)", "destination": "/api/auth/$1" },
+      { "source": "/notes/(.*)", "destination": "/api/notes/$1" }
     ]
   }
   
